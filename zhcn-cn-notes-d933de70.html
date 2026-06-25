@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南宫28 · 信息索引与知识对照</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+        body {
+            background: linear-gradient(145deg, #fce9d4 0%, #f7d9bc 40%, #f2c9a5 100%);
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .site-wrapper {
+            max-width: 1160px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* 标题区 */
+        .hero-title {
+            text-align: center;
+            padding: 0.8rem 0 1.2rem;
+        }
+        .hero-title h1 {
+            font-size: 3.2rem;
+            font-weight: 550;
+            letter-spacing: 1px;
+            color: #6b3f2b;
+            text-shadow: 0 2px 7px rgba(150, 85, 40, 0.07);
+            border-bottom: 3px solid #c68f6b;
+            display: inline-block;
+            padding-bottom: 0.2rem;
+        }
+        .hero-title .subhead {
+            font-size: 1.1rem;
+            color: #7c5c47;
+            margin-top: 0.5rem;
+            background: rgba(255, 245, 235, 0.5);
+            display: inline-block;
+            padding: 0.4rem 2rem;
+            border-radius: 40px;
+            backdrop-filter: blur(1px);
+        }
+
+        /* 内容卡片网格 */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+        }
+
+        .card {
+            background: #fffcf9;
+            border-radius: 32px;
+            padding: 1.8rem 1.8rem 2rem;
+            box-shadow: 0 12px 28px -10px rgba(110, 60, 30, 0.18),
+                        0 2px 6px rgba(0,0,0,0.02);
+            transition: all 0.15s ease;
+            border: 1px solid rgba(235, 195, 165, 0.3);
+        }
+        .card:hover {
+            box-shadow: 0 18px 36px -12px rgba(130, 70, 35, 0.22);
+            transform: translateY(-2px);
+        }
+
+        .card h2 {
+            font-size: 1.6rem;
+            font-weight: 550;
+            color: #69412b;
+            margin-bottom: 1.2rem;
+            border-left: 6px solid #d9a077;
+            padding-left: 0.9rem;
+        }
+
+        .card p, .card li {
+            font-size: 1.05rem;
+            line-height: 1.65;
+            color: #3e2b20;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0.2rem;
+            margin-top: 0.3rem;
+        }
+        .card ul li {
+            padding: 0.4rem 0 0.4rem 1.8rem;
+            position: relative;
+        }
+        .card ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #b07f5e;
+            font-weight: 500;
+        }
+
+        .info-highlight {
+            background: #f6ede6;
+            border-radius: 36px;
+            padding: 0.6rem 1.2rem;
+            display: inline-block;
+            margin: 0.5rem 0 0.2rem;
+            font-size: 0.95rem;
+            color: #5c3c2a;
+        }
+
+        .faq-item {
+            border-bottom: 1px dashed #dcc2b0;
+            padding: 0.9rem 0;
+        }
+        .faq-item:last-child {
+            border-bottom: 0;
+        }
+        .faq-q {
+            font-weight: 600;
+            color: #5b3a28;
+            margin-bottom: 0.2rem;
+        }
+        .faq-a {
+            color: #4b3629;
+            padding-left: 0.3rem;
+        }
+
+        .cta-link-block {
+            background: #f8ede4;
+            border-radius: 60px;
+            padding: 1.6rem 2.2rem;
+            text-align: center;
+            border: 1px solid #e6cbb6;
+            box-shadow: 0 4px 12px rgba(140, 80, 40, 0.06);
+        }
+        .cta-link-block p {
+            font-size: 1.2rem;
+            color: #472f21;
+            line-height: 1.6;
+        }
+        .cta-link-block a {
+            display: inline-block;
+            background: #c48a65;
+            color: #fff5ed;
+            padding: 0.45rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: 0.15s;
+            margin: 0 0.3rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 3px 8px rgba(160, 85, 40, 0.2);
+        }
+        .cta-link-block a:hover {
+            background: #b1744e;
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(140, 70, 30, 0.25);
+        }
+        .cta-link-block .inline-text {
+            font-size: 1.3rem;
+            font-weight: 450;
+        }
+
+        .bottom-note {
+            margin-top: 0.6rem;
+            text-align: center;
+            color: #7c614e;
+            font-size: 0.95rem;
+            padding: 0.8rem 0;
+            border-top: 1px solid #ddc1ac;
+        }
+
+        /* 响应式 */
+        @media (max-width: 760px) {
+            body {
+                padding: 1.2rem 1rem;
+            }
+            .grid-cards {
+                grid-template-columns: 1fr;
+                gap: 1.4rem;
+            }
+            .hero-title h1 {
+                font-size: 2.6rem;
+            }
+            .card h2 {
+                font-size: 1.4rem;
+            }
+            .cta-link-block {
+                padding: 1.4rem 1rem;
+            }
+            .cta-link-block a {
+                font-size: 1.2rem;
+                padding: 0.3rem 1.4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title h1 {
+                font-size: 2.1rem;
+            }
+            .card {
+                padding: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="site-wrapper">
+    <div class="hero-title">
+        <h1>南宫28</h1>
+        <div class="subhead">知识索引 · 日常对照 · 延伸阅读</div>
+    </div>
+
+    <!-- 卡片网格：目录感布局 -->
+    <div class="grid-cards">
+
+        <!-- 卡片 1: 说明区 —— 定位与查阅 -->
+        <div class="card">
+            <h2>📖 说明 · 定位</h2>
+            <p>本页作为围绕 <strong>南宫28</strong> 的轻量知识汇集，便于日常快速检索、概念对照与延伸理解。内容整理自公开信息及常见查询场景，力求简洁、可读。</p>
+            <p style="margin-top: 0.8rem;">无论你是初次接触，还是需要回顾要点，以下板块提供结构化的参考框架。建议按需跳读，不必顺序浏览。</p>
+            <div class="info-highlight">📌 信息组织方式：归类卡片 + 短条目 + 对照提示</div>
+        </div>
+
+        <!-- 卡片 2: 特点区 —— 特征简述 -->
+        <div class="card">
+            <h2>📌 特点摘要</h2>
+            <ul>
+                <li>综合性信息节点，涵盖多个相关维度</li>
+                <li>条目式整理，降低检索成本</li>
+                <li>侧重可对照性，方便横向比较</li>
+                <li>内容保持中性、客观，不包含偏好引导</li>
+                <li>定期核对基础事实，避免过时说法</li>
+            </ul>
+            <p style="margin-top: 0.8rem; background: #efe4da; border-radius: 30px; padding: 0.3rem 1.2rem; display: inline-block;">🔍 建议搭配第三方资料交叉验证</p>
+        </div>
+
+        <!-- 卡片 3: 场景 & 提示区（合并） -->
+        <div class="card">
+            <h2>📎 场景 · 提示</h2>
+            <p><strong>日常查询场景</strong><br>
+            · 查阅术语定义或背景脉络时，可对比此处条目与其他来源。<br>
+            · 需要快速定位「南宫28」相关概念的关系时，本卡片结构可作为参照。<br>
+            · 延伸阅读前，建议先扫读下方 FAQ 摘要，建立基本框架。</p>
+            <p style="margin-top: 0.9rem;"><strong>⚠️ 使用提示</strong><br>
+            本页面为独立整理，不构成专业建议。若涉及具体判断或决策，请以权威一手信息为准。所有链接均指向外部资源，请自行甄别时效与准确性。</p>
+        </div>
+
+        <!-- 卡片 4: FAQ 摘要区 -->
+        <div class="card">
+            <h2>❓ FAQ 摘要</h2>
+            <div class="faq-item">
+                <div class="faq-q">Q：南宫28 通常与哪些关键词关联？</div>
+                <div class="faq-a">A：常见关联包括信息查询、对照参考、索引归类等。具体语境建议根据实际使用场景判断。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Q：如何获得更完整的背景资料？</div>
+                <div class="faq-a">A：可访问 <a href="https://zhcn-cn-ng28.com" style="color:#a16543; font-weight:600; text-decoration:underline;">南宫28</a> 获取更多基础信息，并结合其他公开渠道交叉阅读。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Q：页面内容多久更新？</div>
+                <div class="faq-a">A：本页为静态索引，不定期根据公开信息调整。建议以最新发布版本为准。</div>
+            </div>
+            <p style="margin-top: 0.6rem; font-size: 0.95rem; color:#735b49;">✽ 以上问答仅为常见概括，并非全面解读。</p>
+        </div>
+    </div>
+
+    <!-- 相关信息区 + 自然链接嵌入 -->
+    <div class="cta-link-block">
+        <p class="inline-text">📚 相关信息 · 延伸参考<br>
+        若需进一步阅读或对照原始资料，可访问 <a href="https://zhcn-cn-ng28.com">南宫28</a> 了解更详细的背景与条目结构。</p>
+        <p style="margin-top: 0.5rem; font-size: 1rem; color:#5f4534;">该链接作为信息源之一，供查询与核实使用。</p>
+    </div>
+
+    <!-- 底部说明 -->
+    <div class="bottom-note">
+        <span>知识库入口式索引 · 内容仅供对照参考 · 请理性判断</span>
+    </div>
+</div>
+</body>
+</html>
