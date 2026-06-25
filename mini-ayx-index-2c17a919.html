@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 简明知识库</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #fafbfc;
+      color: #1e1e2a;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1.2rem;
+    }
+
+    .page {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    /* 标题层级 */
+    h1 {
+      font-size: 2rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.2rem;
+    }
+
+    .subhead {
+      font-size: 0.95rem;
+      color: #5d6470;
+      border-left: 3px solid #b0b8c4;
+      padding-left: 1rem;
+      margin: 0.4rem 0 2rem 0;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 520;
+      margin: 2rem 0 0.8rem 0;
+      letter-spacing: -0.01em;
+      border-bottom: 1px solid #e4e7ed;
+      padding-bottom: 0.3rem;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin: 1.3rem 0 0.5rem 0;
+      color: #2a2d3a;
+    }
+
+    p {
+      margin: 0.6rem 0;
+    }
+
+    a {
+      color: #1f3a6b;
+      text-decoration: none;
+      border-bottom: 1px solid #cbd5e0;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    a:hover {
+      color: #0a1c3e;
+      border-bottom-color: #0a1c3e;
+    }
+
+    /* 卡片式说明区 / 提示区 */
+    .info-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.4rem 1.6rem;
+      margin: 1.6rem 0;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.02);
+      border: 1px solid #edf0f5;
+    }
+
+    .info-card p:first-of-type {
+      margin-top: 0;
+    }
+
+    .info-card p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .tip-box {
+      background: #f2f5fa;
+      border-left: 4px solid #4c6a92;
+      padding: 0.9rem 1.4rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.2rem 0;
+    }
+
+    .tip-box strong {
+      color: #29425e;
+      font-weight: 550;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.2rem 0;
+    }
+
+    .meta-item {
+      background: #f9fafc;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      border: 1px solid #eef1f6;
+      font-size: 0.95rem;
+    }
+
+    .meta-item .label {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6a7385;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-summary {
+      margin: 1.8rem 0 0.5rem 0;
+    }
+
+    .faq-item {
+      margin: 0.8rem 0;
+      padding-left: 0.2rem;
+    }
+
+    .faq-item .q {
+      font-weight: 500;
+      color: #1b2a44;
+    }
+
+    .faq-item .a {
+      color: #3e4556;
+      margin-left: 0.4rem;
+      border-left: 2px solid #dde2eb;
+      padding-left: 0.8rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e2e6ed;
+      margin: 2rem 0 1.2rem 0;
+    }
+
+    .footer-note {
+      font-size: 0.85rem;
+      color: #7a8292;
+      margin-top: 2.5rem;
+      text-align: left;
+      border-top: 1px solid #e8ecf3;
+      padding-top: 1.2rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 500px) {
+      body {
+        padding: 1.8rem 1rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      .meta-grid {
+        grid-template-columns: 1fr;
+      }
+      .info-card {
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <h1>爱游戏 · 知识库</h1>
+  <div class="subhead">简明指南 · 信息索引 · 使用提醒</div>
+
+  <!-- 说明区 / 入口介绍 -->
+  <div class="info-card">
+    <p><strong>爱游戏</strong> 是一个集合了游戏资讯、玩法解析与社区讨论的综合内容平台。无论你是寻找单机作品深度评测，还是希望了解热门网游的版本动态，都可以通过 <a href="https://mini-ayx.com.cn">爱游戏</a> 获得相对系统的参考。本站作为快速入口，整理了一份轻量级知识索引，帮助你更高效地使用该平台。</p>
+  </div>
+
+  <!-- 简明指南：目录感布局 -->
+  <h2>📋 内容索引</h2>
+  <p>以下为平台内常见内容的检索方向，方便快速定位感兴趣的区域：</p>
+
+  <div class="meta-grid">
+    <div class="meta-item">
+      <span class="label">🎮 游戏库</span>
+      按名称、类型、标签检索，了解基础信息与评分参考。
+    </div>
+    <div class="meta-item">
+      <span class="label">📰 资讯专栏</span>
+      每日更新，覆盖业界动态、更新公告、活动预告。
+    </div>
+    <div class="meta-item">
+      <span class="label">🧠 玩法解析</span>
+      机制拆解、新手向引导、进阶技巧汇总。
+    </div>
+    <div class="meta-item">
+      <span class="label">💬 讨论区</span>
+      玩家交流、问答互助、组队招募，需遵守版规。
+    </div>
+  </div>
+
+  <!-- 提示区：访问提醒 & 实用建议 -->
+  <div class="tip-box">
+    <strong>🛈 访问提醒</strong> — 使用 <a href="https://mini-ayx.com.cn">爱游戏</a> 时建议开启主流浏览器并保持网络稳定。部分交互功能需注册账号，个人数据请酌情填写。平台不提供破解资源或外挂工具，所有内容均遵循相关法律法规。
+  </div>
+
+  <!-- 相关信息区：简版 FAQ / 常见疑问 -->
+  <h2>❓ 常见疑问摘要</h2>
+
+  <div class="faq-summary">
+    <div class="faq-item">
+      <div class="q">Q：是否需要付费才能浏览内容？</div>
+      <div class="a">大部分资讯、库内容与讨论区可以免费阅读；部分深度专栏或特殊功能可能设有访问条件，以平台实际标注为准。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">Q：如何快速找到特定游戏的讨论？</div>
+      <div class="a">在搜索栏输入完整或简称，系统会匹配相关专区。也可按热门标签筛选。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">Q：看到不实信息或有违规内容怎么办？</div>
+      <div class="a">每个页面均有举报入口，提交后由运营团队复核处理。建议同时保留截图。</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- 额外说明：场景与边界 -->
+  <h3>使用场景举例</h3>
+  <p>～ 查找某款独立游戏的操作指南，在「玩法解析」板块按字母索引查找。<br>
+  ～ 关注每周五发布的「新游前瞻」专栏，提前了解发售日程与测试信息。<br>
+  ～ 参与讨论区的「每日话题」，与其他玩家交流经验，但注意避免泄露个人敏感信息。</p>
+
+  <!-- 再次自然嵌入链接 -->
+  <p style="margin-top:1rem;">若需直接访问主站，可通过上方链接或浏览器收藏 <a href="https://mini-ayx.com.cn">爱游戏</a>。本页仅作知识索引与使用参考，不替代官方说明。</p>
+
+  <div class="footer-note">
+    爱游戏知识库 · 简明版 ｜ 内容基于公开信息整理，仅供参考。实际功能与规则以平台最新版本为准。
+  </div>
+
+</div>
+</body>
+</html>
